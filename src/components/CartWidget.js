@@ -1,10 +1,13 @@
-
 const CartWidget = () => {
     return (
-        <div className="CartWidget">
-            <img src="https://www.freepnglogos.com/uploads/shopping-cart-png/shopping-cart-svg-png-icon-download-28.png"
-                width="80" alt="shopping cart" color="white" className="shop-cart-icon"></img>
+        <div>
+            <img
+                className="imageCart"
+                src="https://media.baamboozle.com/uploads/images/87859/1615424075_16825_gif-url.gif"
+                alt="gif"
+            />
         </div>
     );
 };
+
 export default CartWidget;

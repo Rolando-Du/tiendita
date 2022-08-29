@@ -1,29 +1,33 @@
-import React from 'react';
-import { useState } from 'react';
+import { useState } from "react";
 
-function ItemCount({ initial, stock }) {
+const ItemCount = ({ stock, initial }) => {
+    const [count, setCount] = useState(initial);
 
-    const [carrito, setCarrito] = useState(initial);
-    const addItemCart = () => {
-        if (carrito >= 0 && carrito <= (stock - 1)) {
-            setCarrito(carrito + 1)
+    const increase = () => {
+        const newValue = count + 1;
+        if (newValue <= stock) {
+            setCount(newValue);
         }
-        console.log(carrito);
     };
-    const deleteItemCart = () => {
-        if (carrito > 0) {
-            setCarrito(carrito - 1);
-        }
-        console.log(carrito);
+
+    const decrease = () => {
+        const newValue = count - 1;
+        newValue >= initial && setCount(newValue);
     };
 
     return (
-        <div className='ItemCountContainer'>
-            <button className="btn-delete" onClick={deleteItemCart}>Takes away ❌​</button>
-            <h3 className="ItemCount" >{carrito}</h3>
-            <button className="btn-add" onClick={addItemCart}>Add to cart ✅​</button>
+        <div>
+            <h1 className= "container-title">Count</h1>
+            <h3>Product Counter:<p className="count-product">{count}</p>Product!</h3>
+            <h3>Stock: <p className="count-stock">{stock}</p>Products in Stock!</h3>
+            <div className= "container-btn">
+            <button className="btn-increase" onClick={increase}>Click Me To Add!</button>
+            <button className="btn-decrease" onClick={decrease}>Click Me to Quit!</button>
+            <button className="btn-add">Add to Cart</button>
+            </div>
+
         </div>
-    )
+    );
 };
 
 export default ItemCount;

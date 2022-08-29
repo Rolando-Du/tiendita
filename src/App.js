@@ -1,15 +1,17 @@
-import ItemListContainer from './components/ItemListContainer'
-import NavBar from "./components/NavBar";
+import ItemListContainer from './components/ItemListContainer';
+import NavBar from './components/NavBar';
 
 
 
-function App() {
+const App = () => {
   return (
     <div className="App">
+                  <NavBar />
             <ItemListContainer nameEcommerce="Tiendita Ficticia de Tuki & Tuki 🤙" />
-            <NavBar />
     </div>
   );
 }
 
 export default App;
+
+
